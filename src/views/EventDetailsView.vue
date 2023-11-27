@@ -2,6 +2,13 @@
 import { ref, onMounted } from 'vue'
 import EventService from '../services/EventService.js'
 
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const page = computed(() => parseInt(route.query.page) || 1)
+console.log(page)
+
 const props = defineProps({
     id: {
         required: true
@@ -24,6 +31,9 @@ onMounted(() => {
         <h1>{{ event.title }}</h1>
         <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
         <p>{{ event.description }}</p>
+
+        <h1>You are on page {{ $route.query.page }}</h1>
+
   </div>
 </template>
 
