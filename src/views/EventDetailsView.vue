@@ -32,7 +32,7 @@ onMounted(() => {
         <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
         <p>{{ event.description }}</p>
 
-        <h1>You are on page {{ $route.query.page }}</h1>
+        <h1>You are on page {{ $route.params }}</h1>
 
   </div>
 </template>
